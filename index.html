@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Power BI – European Labour Market Insights</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    *{box-sizing:border-box;scroll-behavior:smooth;}
+    body{
+      font-family:"Poppins",sans-serif;
+      margin:0;
+      padding:0;
+      display:flex;
+      justify-content:center;
+      background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+      color:#fff;
+    }
+    .container{width:90%;max-width:950px;margin:50px auto;}
+    h2{text-align:center;font-size:40px;margin-bottom:20px;font-weight:600;}
+
+    .intro{
+      text-align:center;
+      max-width:750px;
+      margin:15px auto 40px auto;
+      color:#ddd;
+      font-size:18px;
+      line-height:1.6;
+    }
+
+    .home-btn{
+      background:#6a00ff;
+      padding:14px 30px;
+      border-radius:8px;
+      text-decoration:none;
+      color:#fff;
+      font-weight:600;
+      transition:.3s;
+      box-shadow:0 0 10px rgba(106,0,255,0.5);
+    }
+    .home-btn:hover{
+      background:#8b2bff;
+      box-shadow:0 0 15px #8b2bff;
+      transform:scale(1.05);
+    }
+
+    .project-block h3{
+      text-align:center;
+      margin-top:60px;
+      font-size:26px;
+      font-weight:600;
+      letter-spacing:0.5px;
+      color:#e4d9ff;
+      text-shadow:0 0 8px rgba(150,150,255,0.35);
+    }
+
+    .proj-img{
+      width:70%;
+      max-width:650px;
+      display:block;
+      margin:15px auto;
+      border-radius:10px;
+      cursor:pointer;
+      transition:transform .3s;
+      opacity:0;
+      animation:fade 1s ease forwards;
+    }
+    .proj-img:hover{
+      transform:scale(1.05);
+      filter:drop-shadow(0 0 12px rgba(0,225,255,.6));
+    }
+
+    .caption{
+      text-align:center;
+      max-width:700px;
+      margin:10px auto 30px auto;
+      color:#ccc;
+      font-size:16px;
+      opacity:.9;
+    }
+
+    @keyframes fade{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+    #modal{
+      display:none;position:fixed;top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,.8);justify-content:center;align-items:center;z-index:9999;
+    }
+    #modal img{max-width:90%;max-height:90%;border-radius:10px;}
+
+    .learn-box{
+      margin-top:60px;
+      background:rgba(255,255,255,0.08);
+      padding:25px;
+      border-radius:15px;
+      backdrop-filter:blur(8px);
+      border:1px solid rgba(255,255,255,0.18);
+    }
+    .learn-box h3{
+      text-align:center;margin-bottom:15px;font-size:26px;color:#e4d9ff;
+    }
+    .learn-box ul{line-height:1.8;font-size:16px;color:#ddd;}
+
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h2>📊 Power BI – European Labour Market Insights</h2>
+
+  <div style="text-align:center;margin-bottom:35px;">
+    <a class="home-btn" href="https://biancagambulut.github.io/">🏠 Home</a>
+  </div>
+
+ <p class="intro">
+   This dashboard analyzes labour market indicators across Europe from 2010 to 2024,
+   focusing on employment rates, unemployment levels, youth unemployment, NEET share,
+   and part-time and temporary work distribution.  
+   It highlights long-term workforce trends, year-over-year changes, and the best-
+   and worst-performing countries based on multiple labour indicators.
+ </p>
+
+<!-- INTERACTIVE DASHBOARD -->
+<h3 style="text-align:center;margin-top:40px;font-size:28px;font-weight:600;color:#e4d9ff;">
+  Interactive Power BI Dashboard
+</h3>
+
+<div style="
+    width:100%;
+    max-width:950px;
+    margin:30px auto;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 0 18px rgba(0,255,255,0.25);
+">
+  <iframe title="Dashboard"
+      width="100%" height="650px"
+      src="YOUR_EMBED_LINK_HERE"
+      frameborder="0" allowFullScreen="true">
+  </iframe>
+</div>
+
+<div class="project-block">
+
+    <h3>1. Employment & Unemployment Overview</h3>
+    <img class="proj-img" src="Images/Img1.png" onclick="openModal(this.src)">
+    <p class="caption">
+      Overall employment and unemployment performance across Europe, including the
+      highest and lowest scoring countries and YoY employment changes.
+    </p>
+
+    <h3>2. Employment Indicators by Country</h3>
+    <img class="proj-img" src="Images/Img2.png" onclick="openModal(this.src)">
+    <p class="caption">
+      Comparison of countries based on average employment, part-time work and 
+      temporary employee share between 2010–2024.
+    </p>
+
+    <h3>3. Unemployment & Youth NEET Analysis</h3>
+    <img class="proj-img" src="Images/Img3.png" onclick="openModal(this.src)">
+    <p class="caption">
+      Breakdown of unemployment indicators including youth unemployment,
+      NEET rates and long-term unemployment evolution.
+    </p>
+
+    <h3>4. Key Insights & Conclusions</h3>
+    <img class="proj-img" src="Images/Img4.png" onclick="openModal(this.src)">
+    <p class="caption">
+      Strategic observations covering labour market improvements,
+      regional differences and structural workforce challenges.
+    </p>
+
+</div>
+
+<div class="learn-box">
+  <h3>🧠 What I Learned</h3>
+  <ul>
+    <li>How labour indicators evolve over long periods and how to compare countries effectively</li>
+    <li>How to combine employment, unemployment, youth and NEET data into a single analytical model</li>
+    <li>How to structure a multi-page Power BI report with a consistent visual theme</li>
+    <li>Better UX/UI design using highlight cards, slicers and organized navigation</li>
+    <li>Transforming labour statistics into meaningful strategic insights</li>
+  </ul>
+</div>
+
+</div>
+
+<div id="modal" onclick="closeModal()">
+  <img id="modalImg">
+</div>
+
+<script>
+function openModal(src){
+  modalImg.src=src;
+  modal.style.display="flex";
+}
+function closeModal(){
+  modal.style.display="none";
+}
+</script>
+
+</body>
+</html>
